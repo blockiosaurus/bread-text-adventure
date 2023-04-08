@@ -1,4 +1,5 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, NextScript, Main } from 'next/document'
+import { useEffect, useMemo, useState } from 'react';
 
 export default function Document() {
   return (

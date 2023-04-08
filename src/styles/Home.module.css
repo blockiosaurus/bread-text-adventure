@@ -5,6 +5,65 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  /* screen glow */
+  background-image: radial-gradient(
+    #001A00, black 120%
+  );
+  width: 100%;
+}
+
+.output{
+  color: #00C400;
+  font-size: 2.2vh;
+  font-family: 'Apple II';
+  line-height: 4vh;
+  /* text glow */
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.6);
+  padding: 2vw 2vw 0 2vw;
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+.output::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: repeating-linear-gradient(rgba(255, 78, 0, 0.03) 0.5vh, rgba(0, 0, 0, 0.05) 0.8vh);
+  z-index: -1;
+}
+
+.output div {
+  margin-bottom: 1vw;
+}
+
+.input {
+  display: flex;
+  width: 100%;
+}
+
+.inputBox {
+  height: 4vh;
+  width: 98.5vh;
+  color: green;
+  background: transparent;
+  font-size: 2vh;
+  font-family: "Apple II";
+  border: none;
+  position: relative;
+  bottom: 0.175vh;
+  margin-left: .5vw;
+  width: 100%;
+}
+
+.input span {
+  margin-left: 2vw;
+}
+
+.inputBox:focus {
+  outline: none;
 }
 
 .description {
@@ -275,4 +334,17 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+@keyframes blink {
+  0% {background: orange;}
+  49% {background: orange;}
+  60% {background: transparent;}
+  99% {background: transparent;}
+  100% {background: orange;}
+}
+
+@font-face{
+  font-family: 'Apple II';
+  src: url('/fonts/font.ttf');
 }
